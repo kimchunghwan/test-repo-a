@@ -34,3 +34,8 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
           repositories: test-repo-a,test-repo-b
+          
+      - name: Read test-repo-b README
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+        run: gh api repos/kimchunghwan/test-repo-b/contents/README.md --jq '.content' | base64 -d
