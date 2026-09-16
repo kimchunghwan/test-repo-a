@@ -29,7 +29,9 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      - uses: actions/create-github-app-token@v3.2.0
+      - name: Generate token
+        id: generate-token
+        uses: actions/create-github-app-token@v3.2.0
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
