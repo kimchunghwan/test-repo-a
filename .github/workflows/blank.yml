@@ -33,4 +33,4 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.PRIVATE_KEY }}
-          repositories: test-repo-a
+          repositories: test-repo-a,test-repo-b
